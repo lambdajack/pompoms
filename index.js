@@ -1,4 +1,4 @@
-#!/usr/bin/env Node
+#!/usr/bin/env node
 
 import chalk from "chalk";
 import inquirer from "inquirer";
@@ -205,7 +205,7 @@ const pomodoroLoop = async () => {
 
 const endMessage = (e) => {
   if (e !== "exit") process.exit();
-  if (iterations !== roundsToComplete) console.log("\n");
+  if (iterations !== roundsToComplete || iterations === 0) console.log("\n");
   if (iterations > 0) {
     if (iterations === roundsToComplete) {
       console.log(`
