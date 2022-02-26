@@ -15,7 +15,7 @@ const welcomeMessage = async () => {
     ██████  ██    ██ ██ ████ ██ ██████  ██    ██ ██ ████ ██ ███████ 
     ██      ██    ██ ██  ██  ██ ██      ██    ██ ██  ██  ██      ██ 
     ██       ██████  ██      ██ ██       ██████  ██      ██ ███████     
-    The super simple javascript Pomodoro timer____*____*____*____
+    The super simple javascript Pomodoro timer____*____*____*____*
     `));
     console.log(chalk_1.default.blueBright(`
   - A 25 minute working session, followed by a 5 minute break; repeated 4 times.
