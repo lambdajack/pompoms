@@ -1,2 +1,5 @@
-`npx pompoms`
+```
+$ npx pompoms
+```
+
 ![Example text](img/example.png)
