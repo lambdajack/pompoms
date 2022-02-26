@@ -12,7 +12,7 @@ export const welcomeMessage = async () => {
     ██████  ██    ██ ██ ████ ██ ██████  ██    ██ ██ ████ ██ ███████ 
     ██      ██    ██ ██  ██  ██ ██      ██    ██ ██  ██  ██      ██ 
     ██       ██████  ██      ██ ██       ██████  ██      ██ ███████     
-    The super simple javascript Pomodoro timer____*____*____*____
+    The super simple javascript Pomodoro timer____*____*____*____*
     `)
   );
 
