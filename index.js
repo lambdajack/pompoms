@@ -6,7 +6,7 @@ import cliProgress from "cli-progress";
 import emoji from "node-emoji";
 
 const sleep = (ms = 1000) => new Promise((r) => setTimeout(r, ms));
-const waitOneMin = async () => await sleep(100);
+const waitOneMin = async () => await sleep(60000);
 
 const workInMins = 25;
 const shortBreakInMins = 5;
