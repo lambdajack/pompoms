@@ -1,13 +1,15 @@
 {
   "name": "pompoms",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "An easy, simple Pomodoro timer for the terminal.",
-  "main": "pompom.js",
-  "type": "module",
+  "exports": "./src/index.ts",
   "scripts": {
-    "start": "node index.js"
+    "dev": "tsnd --respawn --transpile-only src/index.ts",
+    "start": "node build/index.js",
+    "build": "tsc --build",
+    "deploy": "npm run build && npm run start"
   },
-  "bin": "./index.js",
+  "bin": "./build/index.js",
   "keywords": [
     "Pomodoro",
     "Timer",
@@ -17,9 +19,17 @@
   "author": "Jack Bizzell",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^5.0.0",
+    "chalk": "4.1.2",
     "cli-progress": "^3.10.0",
     "inquirer": "^8.2.0",
     "node-emoji": "^1.11.0"
+  },
+  "devDependencies": {
+    "@types/cli-progress": "^3.9.2",
+    "@types/inquirer": "^8.2.0",
+    "@types/node-emoji": "^1.8.1",
+    "ts-node": "^10.5.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.4"
   }
 }
