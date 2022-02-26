@@ -1,6 +1,6 @@
 {
   "name": "pompoms",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An easy, simple Pomodoro timer for the terminal.",
   "main": "pompom.js",
   "type": "module",
