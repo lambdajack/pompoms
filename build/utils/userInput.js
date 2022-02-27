@@ -28,7 +28,7 @@ const getUserInput = async (defaultLongBreakLength) => {
             name: "longBreak",
             type: "input",
             message: `How long will your 'long breaks' be?
-      20-30 minutes is recommend`,
+      20-30 minutes is recommended`,
             default() {
                 return defaultLongBreakLength;
             },
@@ -46,8 +46,8 @@ const getUserInput = async (defaultLongBreakLength) => {
         answers.intendedRounds = 0;
     }
     return {
-        roundsToComplete: +answers.intendedRounds,
-        longBreakInMins: +answers.longBreak,
+        roundsToComplete: Math.round(+answers.intendedRounds),
+        longBreakInMins: Math.round(+answers.longBreak),
     };
 };
 exports.getUserInput = getUserInput;

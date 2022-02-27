@@ -47,7 +47,7 @@ const endMessage = (roundsCompleted, roundsToComplete, e) => {
     if (roundsCompleted > 0) {
         if (roundsCompleted === roundsToComplete) {
             console.log(`
-      ${chalk_1.default.green.bold("Congratulations")}, you completed your goal of ${chalk_1.default.blueBright(`${roundsCompleted} of ${roundsToComplete}`)} rounds!
+      ${chalk_1.default.green.bold("Congratulations")}, you completed your goal of ${chalk_1.default.blueBright.bold(`${roundsCompleted} of ${roundsToComplete}`)} rounds!
 
       Really great work! See you next time. ${node_emoji_1.default.get("tada")}
       `);

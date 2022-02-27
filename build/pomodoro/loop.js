@@ -21,11 +21,11 @@ const pomodoroLoop = async (roundsToComplete, longBreakInMins) => {
     if (iterations !== roundsToComplete) {
         console.log(`
   That's ${iterations} full pomodoro rounds complete. Great work!
-    Time for a nice ${chalk_1.default.blue(`${longBreakInMins} minute break`)} to reset.
+    Time for a nice ${chalk_1.default.blueBright(`${longBreakInMins} minute break`)} to reset.
   `);
         await (0, longBreak_1.pomodoroLongBreak)(longBreakInMins);
         console.log(`
-  Okay, good stuff. Break's over... ${chalk_1.default.yellow.bold("let's get back to it!")}
+  Okay, good stuff. Break's over... ${chalk_1.default.yellowBright.bold("let's get back to it!")}
   ${roundsToComplete > 0
             ? `${iterations} of ${roundsToComplete} rounds complete.`
             : ""}
