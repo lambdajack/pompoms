@@ -23,12 +23,14 @@ export const pomodoroLoop = async (
   if (iterations !== roundsToComplete) {
     console.log(`
   That's ${iterations} full pomodoro rounds complete. Great work!
-    Time for a nice ${chalk.blue(`${longBreakInMins} minute break`)} to reset.
+    Time for a nice ${chalk.blueBright(
+      `${longBreakInMins} minute break`
+    )} to reset.
   `);
     await pomodoroLongBreak(longBreakInMins);
 
     console.log(`
-  Okay, good stuff. Break's over... ${chalk.yellow.bold(
+  Okay, good stuff. Break's over... ${chalk.yellowBright.bold(
     "let's get back to it!"
   )}
   ${

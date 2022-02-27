@@ -62,7 +62,7 @@ export const endMessage = (
       console.log(`
       ${chalk.green.bold(
         "Congratulations"
-      )}, you completed your goal of ${chalk.blueBright(
+      )}, you completed your goal of ${chalk.blueBright.bold(
         `${roundsCompleted} of ${roundsToComplete}`
       )} rounds!
 
