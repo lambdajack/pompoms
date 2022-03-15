@@ -177,7 +177,7 @@ const pomodoroLoop = async () => {
 
   if (iterations < roundsToComplete || roundsToComplete === 0) {
     console.log(`
-  That's ${iterations} full pomodoro rounds complete. Great work!
+  That's ${iterations} full Pomodoro rounds complete. Great work!
     Time for a nice ${chalk.blue(`${longBreakInMins} minute break`)} to reset.
   `);
     await pomodoroLongBreak();

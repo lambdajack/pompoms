@@ -22,7 +22,7 @@ export const pomodoroLoop = async (
 
   if (iterations !== roundsToComplete) {
     console.log(`
-  That's ${iterations} full pomodoro rounds complete. Great work!
+  That's ${iterations} full Pomodoro rounds complete. Great work!
     Time for a nice ${chalk.blueBright(
       `${longBreakInMins} minute break`
     )} to reset.
