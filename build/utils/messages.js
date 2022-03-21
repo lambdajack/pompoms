@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.endMessage = exports.readyMessage = exports.welcomeMessage = void 0;
 const chalk_1 = __importDefault(require("chalk"));
 const node_emoji_1 = __importDefault(require("node-emoji"));
+const node_notifier_1 = __importDefault(require("node-notifier"));
 const sleep_1 = require("./sleep");
 const welcomeMessage = async () => {
     console.log(chalk_1.default.redBright.bold(`
@@ -39,7 +40,7 @@ const readyMessage = async () => {
     console.log("\n");
 };
 exports.readyMessage = readyMessage;
-const endMessage = (roundsCompleted, roundsToComplete, e) => {
+const endMessage = (roundsCompleted, roundsToComplete, showSystemNotifications, e) => {
     if (e !== "exit")
         process.exit();
     if (roundsCompleted !== roundsToComplete || roundsCompleted === 0)
@@ -51,6 +52,13 @@ const endMessage = (roundsCompleted, roundsToComplete, e) => {
 
       Really great work! See you next time. ${node_emoji_1.default.get("tada")}
       `);
+            if (showSystemNotifications) {
+                node_notifier_1.default.notify({
+                    title: `Pompoms | Congratulations ${node_emoji_1.default.get("tada")}`,
+                    message: `You completed your goal of ${roundsCompleted} rounds.`,
+                    time: 10000,
+                });
+            }
         }
         else {
             console.log(`
