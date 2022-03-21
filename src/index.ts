@@ -23,6 +23,7 @@ const main = async () => {
       showSystemNotifications
     ));
   }
+  process.exit();
 };
 
 ["SIGINT", "exit"].forEach((e) =>
