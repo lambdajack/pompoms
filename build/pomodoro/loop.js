@@ -33,14 +33,14 @@ const pomodoroLoop = async (roundsToComplete, longBreakInMins, showSystemNotific
     }
     await (0, work_1.pomodoroWork)();
     iterations++;
-    if (showSystemNotifications) {
-        node_notifier_1.default.notify({
-            title: "Pompoms | Great progress!",
-            message: `${iterations} round${iterations > 1 ? "s" : ""} complete. Time for a long break. See you in ${longBreakInMins} minutes.`,
-            time: 10000,
-        });
-    }
     if (iterations !== roundsToComplete) {
+        if (showSystemNotifications) {
+            node_notifier_1.default.notify({
+                title: "Pompoms | Great progress!",
+                message: `${iterations} round${iterations > 1 ? "s" : ""} complete. Time for a long break. See you in ${longBreakInMins} minutes.`,
+                time: 10000,
+            });
+        }
         console.log(`
   That's ${iterations} full Pomodoro rounds complete. Great work!
     Time for a nice ${chalk_1.default.blueBright(`${longBreakInMins} minute break`)} to reset.

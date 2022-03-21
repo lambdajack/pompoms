@@ -17,6 +17,7 @@ const main = async () => {
     while (roundsCompleted < roundsToComplete || roundsToComplete === 0) {
         ({ roundsCompleted } = await (0, loop_1.pomodoroLoop)(roundsToComplete, longBreakInMins, showSystemNotifications));
     }
+    process.exit();
 };
 ["SIGINT", "exit"].forEach((e) => process.on(e, () => (0, messages_1.endMessage)(roundsCompleted, roundsToComplete, showSystemNotifications, e)));
 if (process.argv[2] === "-s") {
