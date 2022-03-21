@@ -3,7 +3,7 @@ npx pompoms
 ```
 
 ```javascript
- // Silent mode - disable system notifications when sections complete.
+// Silent mode - disable system notifications when sections complete.
 npx pompoms -s
 ```
 
