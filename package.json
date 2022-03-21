@@ -1,6 +1,6 @@
 {
   "name": "pompoms",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "The pretty & simple terminal Pomodoro timer.",
   "exports": "./src/index.ts",
   "scripts": {
