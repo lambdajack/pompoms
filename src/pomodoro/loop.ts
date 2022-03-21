@@ -1,4 +1,5 @@
 import chalk from "chalk";
+import notifier from "node-notifier";
 
 import { pomodoroLongBreak } from "./longBreak";
 import { pomodoroShortBreak } from "./shortBreak";
@@ -8,19 +9,44 @@ let iterations = 0;
 
 export const pomodoroLoop = async (
   roundsToComplete: number,
-  longBreakInMins: number
+  longBreakInMins: number,
+  showSystemNotifications: boolean
 ) => {
   let mainSeqReps = 0;
 
   while (mainSeqReps < 3) {
     mainSeqReps++;
     await pomodoroWork();
+    if (showSystemNotifications) {
+      notifier.notify({
+        title: "Pompoms",
+        message: "Time for a 5 minute break",
+        time: 10000,
+      });
+    }
     await pomodoroShortBreak();
+    if (showSystemNotifications) {
+      notifier.notify({
+        title: "Pompoms",
+        message: "Break time over; back to it!",
+        time: 10000,
+      });
+    }
   }
   await pomodoroWork();
   iterations++;
 
   if (iterations !== roundsToComplete) {
+    if (showSystemNotifications) {
+      notifier.notify({
+        title: "Pompoms | Great progress!",
+        message: `${iterations} round${
+          iterations > 1 ? "s" : ""
+        } complete. Time for a long break. See you in ${longBreakInMins} minutes.`,
+        time: 10000,
+      });
+    }
+
     console.log(`
   That's ${iterations} full Pomodoro rounds complete. Great work!
     Time for a nice ${chalk.blueBright(
@@ -28,6 +54,14 @@ export const pomodoroLoop = async (
     )} to reset.
   `);
     await pomodoroLongBreak(longBreakInMins);
+
+    if (showSystemNotifications) {
+      notifier.notify({
+        title: "Pompoms",
+        message: "Break time over, time to start another round.",
+        time: 10000,
+      });
+    }
 
     console.log(`
   Okay, good stuff. Break's over... ${chalk.yellowBright.bold(

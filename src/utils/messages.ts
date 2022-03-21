@@ -1,5 +1,6 @@
 import chalk from "chalk";
 import emoji from "node-emoji";
+import notifier from "node-notifier";
 
 import { sleep } from "./sleep";
 
@@ -51,6 +52,7 @@ export const readyMessage = async () => {
 export const endMessage = (
   roundsCompleted: number,
   roundsToComplete: number,
+  showSystemNotifications: boolean,
   e?: string
 ) => {
   if (e !== "exit") process.exit();
@@ -68,6 +70,13 @@ export const endMessage = (
 
       Really great work! See you next time. ${emoji.get("tada")}
       `);
+      if (showSystemNotifications) {
+        notifier.notify({
+          title: `Pompoms | Congratulations ${emoji.get("tada")}`,
+          message: `You completed your goal of ${roundsCompleted} rounds.`,
+          time: 10000,
+        });
+      }
     } else {
       console.log(`
   ${chalk.green.bold("Congratulations")}, you completed ${chalk.blueBright(

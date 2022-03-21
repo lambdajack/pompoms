@@ -9,13 +9,20 @@ const shortBreakInMins = 5;
 let roundsToComplete = 0;
 let roundsCompleted = 0;
 let longBreakInMins = 25;
+let showSystemNotifications = true;
 const main = async () => {
     (0, messages_1.welcomeMessage)();
     ({ longBreakInMins, roundsToComplete } = await (0, userInput_1.getUserInput)(longBreakInMins));
     await (0, messages_1.readyMessage)();
     while (roundsCompleted < roundsToComplete || roundsToComplete === 0) {
-        ({ roundsCompleted } = await (0, loop_1.pomodoroLoop)(roundsToComplete, longBreakInMins));
+        ({ roundsCompleted } = await (0, loop_1.pomodoroLoop)(roundsToComplete, longBreakInMins, showSystemNotifications));
     }
 };
-["SIGINT", "exit"].forEach((e) => process.on(e, () => (0, messages_1.endMessage)(roundsCompleted, roundsToComplete, e)));
-main();
+["SIGINT", "exit"].forEach((e) => process.on(e, () => (0, messages_1.endMessage)(roundsCompleted, roundsToComplete, showSystemNotifications, e)));
+if (process.argv[2] === "-s") {
+    showSystemNotifications = false;
+    main();
+}
+else {
+    main();
+}

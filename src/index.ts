@@ -10,6 +10,7 @@ const shortBreakInMins = 5;
 let roundsToComplete = 0;
 let roundsCompleted = 0;
 let longBreakInMins = 25;
+let showSystemNotifications = true;
 
 const main = async () => {
   welcomeMessage();
@@ -18,13 +19,22 @@ const main = async () => {
   while (roundsCompleted < roundsToComplete || roundsToComplete === 0) {
     ({ roundsCompleted } = await pomodoroLoop(
       roundsToComplete,
-      longBreakInMins
+      longBreakInMins,
+      showSystemNotifications
     ));
   }
+  process.exit();
 };
 
 ["SIGINT", "exit"].forEach((e) =>
-  process.on(e, () => endMessage(roundsCompleted, roundsToComplete, e))
+  process.on(e, () =>
+    endMessage(roundsCompleted, roundsToComplete, showSystemNotifications, e)
+  )
 );
 
-main();
+if (process.argv[2] === "-s") {
+  showSystemNotifications = false;
+  main();
+} else {
+  main();
+}
