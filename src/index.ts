@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 
 import { pomodoroLoop } from "./pomodoro/loop";
-import { endMessage, readyMessage, welcomeMessage } from "./utils/messages";
+import {
+  colourInspirationMessage,
+  endMessage,
+  readyMessage,
+  welcomeMessage,
+} from "./utils/messages";
 import { getUserInput } from "./utils/userInput";
 
 const workInMins = 25;
@@ -16,6 +21,7 @@ const main = async () => {
   welcomeMessage();
   ({ longBreakInMins, roundsToComplete } = await getUserInput(longBreakInMins));
   await readyMessage();
+  await colourInspirationMessage();
   while (roundsCompleted < roundsToComplete || roundsToComplete === 0) {
     ({ roundsCompleted } = await pomodoroLoop(
       roundsToComplete,

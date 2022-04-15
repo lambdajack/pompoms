@@ -51,6 +51,18 @@ export const readyMessage = async () => {
   console.log("\n");
 };
 
+export const colourInspirationMessage = () => {
+  console.log(
+    chalk.cyan(
+      `This current colour theme is inspired by a dream I had at an old school beach arcade.`
+    )
+  );
+  console.log(
+    chalk.cyanBright(`The colour theme will change periodically, and whimsically.
+    `)
+  );
+};
+
 export const endMessage = (
   roundsCompleted: number,
   roundsToComplete: number,
