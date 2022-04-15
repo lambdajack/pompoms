@@ -8,7 +8,7 @@ const shortBreakInMins = 5;
 
 export const pomodoroShortBreak = async () => {
   const sb1 = new cliProgress.Bar({
-    format: ` ${emoji.get("cup_with_straw")} ${chalk.bgBlackBright(
+    format: ` ${emoji.get("cup_with_straw")} ${chalk.whiteBright(
       "{bar}"
     )} Short break  | {value}/{total} minutes`,
     barCompleteChar: "\u2588",

@@ -8,7 +8,7 @@ const workInMins = 25;
 
 export const pomodoroWork = async () => {
   const w1 = new cliProgress.Bar({
-    format: ` ${emoji.get("memo")} ${chalk.greenBright.bgBlackBright(
+    format: ` ${emoji.get("memo")} ${chalk.blueBright(
       "{bar}"
     )} Working      | {value}/{total} minutes`,
     barCompleteChar: "\u2588",

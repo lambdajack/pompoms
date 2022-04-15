@@ -19,9 +19,11 @@ export const welcomeMessage = async () => {
 
   console.log(
     chalk.blueBright(`
-  - A 25 minute working session, followed by a 5 minute break; repeated 4 times.
-  - A longer break of around 20-30 minutes depending on preference.
-  - repeat
+  Pomodoro Round:
+
+  1. A 25 minute work session, followed by a 5 minute break; repeated 3 times.
+  2. A 25 minute work session, followed by a longer break.
+  3. Repeat steps 1 and 2, as desired.
   `)
   );
 };
