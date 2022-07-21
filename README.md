@@ -11,8 +11,6 @@ npx pompoms -s
 
 ### The pretty & simple terminal based Pomodoro timer.
 
-## Future features
-
-- Audio
+_note the colours will change whimsically, as insipration takes me.._
 
 ### All feature requests and contributions welcome! [Github](https://github.com/jacksbrand/pompoms).
