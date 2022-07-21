@@ -54,7 +54,8 @@ export const readyMessage = async () => {
 export const colourInspirationMessage = () => {
   console.log(
     chalk.cyan(
-      `This current colour theme is inspired by a dream I had at an old school beach arcade.`
+      `I am find myself falling deeper and deeper into the realms of science fiction these days. 
+This colour palette reflects my visions...`
     )
   );
   console.log(

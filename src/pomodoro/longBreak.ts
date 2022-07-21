@@ -6,7 +6,7 @@ import { waitOneMin } from "../utils/sleep";
 
 export const pomodoroLongBreak = async (longBreakInMins: number) => {
   const lb1 = new cliProgress.Bar({
-    format: ` ${emoji.get("sun_with_face")} ${chalk.magenta(
+    format: ` ${emoji.get("sun_with_face")} ${chalk.blue(
       "{bar}"
     )} Long break  | {value}/{total} minutes`,
     barCompleteChar: "\u2588",
