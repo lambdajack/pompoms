@@ -54,7 +54,7 @@ export const readyMessage = async () => {
 export const colourInspirationMessage = () => {
   console.log(
     chalk.cyan(
-      `I am find myself falling deeper and deeper into the realms of science fiction these days. 
+      `I find myself falling deeper and deeper into the realms of science fiction. 
 This colour palette reflects my visions...`
     )
   );
